@@ -29,8 +29,8 @@ export const App: React.FC<IAppProps> = () => {
         <CharactersContextProvider>
           <FoundryPageContextProvider>
             <SideMenu />
-            <Header />
-            <main>
+            <main className='app__main'>
+              <Header />
               <TransitionGroup>
                 <CSSTransition key={location.key} classNames="approuter" timeout={300} unmountOnExit>
                   <Routes location={location}>

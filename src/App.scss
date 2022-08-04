@@ -30,6 +30,15 @@ body {
     max-width: 1440px;
     min-width: 280px;
     height: 100%;
+    padding: 121px 4.76% 0 29%;
+
+    @media screen and (max-width: 1200px) {
+      padding: 121px 3% 0 34%;
+    }
+
+    @media screen and (max-width: 1008px) {
+      padding: 121px 20px 0 20px;
+    }
   }
 }
 

@@ -1,17 +1,17 @@
 .chests {
-    padding: 155px 4.76% 0 29%;
     display: grid;
     grid-template-columns: repeat(3, 224px);
     justify-content: space-between;
     grid-row-gap: 50px;
     background-color: transparent;
 
-    @media screen and (max-width: 1148px) {
-        padding: 155px 3% 0 27%;
+    @media screen and (max-width: 1120px) {
+        grid-template-columns: repeat(2, 224px);
     }
 
     @media screen and (max-width: 1008px) {
-        padding: 142px 20px 0 20px;
+        padding-top: 32px;
+        grid-template-columns: repeat(3, 224px);
     }
 
     @media screen and (max-width: 760px) {
