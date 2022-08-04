@@ -1,0 +1,26 @@
+.characters {
+    padding: 121px 4.76% 0 29%;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 1148px) {
+        padding: 121px 3% 0 27%;
+    }
+
+    @media screen and (max-width: 1008px) {
+        padding: 121px 20px 20px 20px;
+    }
+
+    &__cards {
+        width: 100%;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 10px 0 22px 2px; 
+        scrollbar-width: thin;
+        overflow-x: auto;
+        padding-left: 40px;
+    }
+}
