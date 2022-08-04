@@ -13,7 +13,7 @@ interface ISideMenuProps {}
 export const SideMenu: React.FC<ISideMenuProps> = () => {
     return (
         <div className="side-menu">
-            <img className="side-menu__logo" src={logo} alt="logo" />
+            <img className="side-menu__logo" src={logo} alt="Logo" />
             <div className="side-menu__line side-menu__line-top"></div>
             <div className="side-menu__items">
                 <MenuItem label="home" route={ERoute.HOMEPAGE} />
@@ -24,9 +24,9 @@ export const SideMenu: React.FC<ISideMenuProps> = () => {
             </div>
             <div className="side-menu__line side-menu__line-bottom"></div>
             <div className="side-menu__links">
-                <img src={setIcon} alt="icon" />
-                <img src={telegramIcon} alt="telegram-icon" />
-                <img src={twitterIcon} alt="twitter-icon" />
+                <img src={setIcon} alt="Icon" />
+                <img src={telegramIcon} alt="Telegram icon" />
+                <img src={twitterIcon} alt="Twitter icon" />
             </div>
             <BigButton
                 className="side-menu__button"

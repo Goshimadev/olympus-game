@@ -23,7 +23,7 @@ export const Header: React.FC<IHeaderProps> = () => {
                         title="$OlYMP"
                         trigger={smallScreen.matches ? "click" : "hover"}
                     >
-                        <img className="header__icons" src={olympIcon} alt="game-icon" />
+                        <img className="header__icons" src={olympIcon} alt="Olymp" />
                     </Tooltip>
                     <div className="header__items-total">{createdUser.olymp}</div>
                 </div>
@@ -33,7 +33,7 @@ export const Header: React.FC<IHeaderProps> = () => {
                         title="Evolving stone"
                         trigger={smallScreen.matches ? "click" : "hover"}
                     >
-                        <img className="header__icons" src={stoneIcon} alt="game-icon" />
+                        <img className="header__icons" src={stoneIcon} alt="Stone" />
                     </Tooltip>
                     <div className="header__items-total">{createdUser.stones}</div>
                 </div>
@@ -43,13 +43,13 @@ export const Header: React.FC<IHeaderProps> = () => {
                         title="Evolving powder"
                         trigger={smallScreen.matches ? "click" : "hover"}
                     >
-                        <img className="header__icons" src={powderIcon} alt="game-icon" />
+                        <img className="header__icons" src={powderIcon} alt="Powder" />
                     </Tooltip>
                     <div className="header__items-total">{createdUser.powder}</div>
                 </div>
             </div>
             <div className="header__text header__items-total">0xf7ds...654e</div>
-            <img className="header__logo" src={logo} alt="logo" /> 
+            <img className="header__logo" src={logo} alt="Logo" /> 
         </div>
     )
 }

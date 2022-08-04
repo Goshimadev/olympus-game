@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import { Navigate, Outlet, useNavigate, useParams } from "react-router-dom";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
 import { ERoute } from "src/constants";
 import { CharactersContext } from "../../context/CharactersContext/CharactersContext";
 import { ICharacter } from "../../interfaces";
@@ -62,7 +62,7 @@ export const Character: React.FC<ICharacterProps> = () => {
         <div className="character">
             <div className="character__main">
                 <div className="character__main-image">
-                    <img className="character__image-img" src={character?.image} alt="character-image" />
+                    <img className="character__image-img" src={character?.image} alt="Character" />
                     <button
                         className="character__arrow character__arrow-left" 
                         onClick={handlePreviousCharacter}

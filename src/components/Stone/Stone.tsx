@@ -10,7 +10,7 @@ interface IStoneProps {
 export const Stone: React.FC<IStoneProps> = ({ label }) => {
     return (
         <div className="stone">
-            <img className="stone__image" src={stoneImage} alt="stone-image" />
+            <img className="stone__image" src={stoneImage} alt="Stone" />
             <SmallButton className="stone__button" label={label} />
         </div>
     )
