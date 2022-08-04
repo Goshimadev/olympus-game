@@ -64,7 +64,7 @@ function SamplePrevArrow(props: any) {
 
 const responsiveSettings = [
     {
-        breakpoint: 864,
+        breakpoint: 1214,
         settings: {
           slidesToShow: 5,
           slidesToScroll: 5,

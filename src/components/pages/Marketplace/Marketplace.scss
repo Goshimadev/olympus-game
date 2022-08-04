@@ -1,11 +1,6 @@
 .marketplace {
     display: flex;
     justify-content: flex-end;
-    padding: 372px 22% 0 0;
-
-    @media screen and (max-width: 1148px) {
-        padding: 372px 19% 0 0;
-    }
 
     @media screen and (max-width: 1008px) {
         padding: 0;

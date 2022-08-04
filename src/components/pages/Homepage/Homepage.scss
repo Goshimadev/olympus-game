@@ -1,17 +1,8 @@
 .homepage {
-    padding: 121px 4.76% 0 29%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 48px;
-
-    @media screen and (max-width: 1148px) {
-        padding: 121px 3% 0 27%;
-    }
-
-    @media screen and (max-width: 1008px) {
-        padding: 121px 20px 0 20px;
-    }
 
     @media screen and (max-width: 640px) {
         gap: 40px;

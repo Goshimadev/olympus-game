@@ -1,13 +1,18 @@
 .side-menu {
     position: absolute;
     height: 1024px;
-    width: 24%;
+    min-width: 24%;
     background-color: #3E394D;
     top: 0;
     left: 0;
     padding: 34px 2.8% 0 2.8%;
     display: flex;
     flex-direction: column;
+    z-index: 1;
+
+    @media screen and (min-width: 1440px) {
+        max-width: 420px;
+    }
 
     @media screen and (max-width: 1008px) {
         display: none;

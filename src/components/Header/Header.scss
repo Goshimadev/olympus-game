@@ -1,7 +1,6 @@
 .header {
     position: absolute;
     top: 31px;
-    right: 4.76%;
     width: 66%;
     height: 61px;
     background-color: #3E394C;
@@ -13,9 +12,13 @@
     gap: 10.6%;
     padding-right: 40px;
 
-    @media screen and (max-width: 1148px) {
-        right: 3%;
-        width: 70%;
+    @media screen and (min-width: 1440px) {
+        max-width: 954px;
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 63%;
     }
 
     @media screen and (max-width: 1008px) {
@@ -33,7 +36,7 @@
         align-items: center;
         gap: 60px;
 
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: 1200px) {
             gap: 24px;
         }
     }
