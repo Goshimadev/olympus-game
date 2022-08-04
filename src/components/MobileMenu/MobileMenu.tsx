@@ -38,7 +38,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = () => {
     return (
         <>
             {mediumScreen.matches && !isMenuOpen &&
-                <img className="mobile-menu__open" src={menuIcon} alt="menu-icon" onClick={handleOpenMenu} />
+                <img className="mobile-menu__open" src={menuIcon} alt="Menu" onClick={handleOpenMenu} />
             }
             
             {isMenuOpen &&
@@ -47,15 +47,15 @@ export const MobileMenu: React.FC<IMobileMenuProps> = () => {
                     {smallScreen.matches && 
                         <div className="mobile-menu__points">
                             <div className="mobile-menu__points-items">
-                                <img className="header__icons" src={olympIcon} alt="game-icon" />
+                                <img className="header__icons" src={olympIcon} alt="Olymp" />
                                 <div className="mobile-menu__points-total">{createdUser.olymp}</div>
                             </div>
                             <div className="mobile-menu__points-items">
-                                <img className="header__icons" src={stoneIcon} alt="game-icon" />
+                                <img className="header__icons" src={stoneIcon} alt="Stone" />
                                 <div className="mobile-menu__points-total">{createdUser.stones}</div>
                             </div>
                             <div className="mobile-menu__points-items">
-                                <img className="header__icons" src={powderIcon} alt="game-icon" />
+                                <img className="header__icons" src={powderIcon} alt="Powder" />
                                 <div className="mobile-menu__points-total">{createdUser.powder}</div>
                             </div>
                         </div>
@@ -70,9 +70,9 @@ export const MobileMenu: React.FC<IMobileMenuProps> = () => {
                     </div>
                     <div className="mobile-menu__line mobile-menu__line-bottom"></div>
                             <div className="mobile-menu__links">
-                        <img src={setIcon} alt="icon" />
-                        <img src={telegramIcon} alt="telegram-icon" />
-                        <img src={twitterIcon} alt="twitter-icon" />
+                        <img src={setIcon} alt="Icon" />
+                        <img src={telegramIcon} alt="Telegram icon" />
+                        <img src={twitterIcon} alt="Twitter icon" />
                     </div>
                     <BigButton
                         className="mobile-menu__button"

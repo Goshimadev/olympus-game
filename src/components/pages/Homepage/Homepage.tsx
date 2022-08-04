@@ -33,7 +33,7 @@ export const Homepage: React.FC<IHomepageProps> = () => {
                     }
                 </div>
             </div>
-            <img className="homepage__image" src={chimeraImage} alt="chimera-image" />
+            <img className="homepage__image" src={chimeraImage} alt="Chimera" />
             <div className="homepage__sub">
                 <div className="homepage__sub-container homepage__news">
                     <GradientContainer className="homepage__news-gradient" />

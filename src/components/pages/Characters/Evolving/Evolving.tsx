@@ -22,7 +22,13 @@ export const Evolving: React.FC<IEvolvingProps> = () => {
 
         handleUpdateUser(createdUser, "stones", createdUser.stones - stonesToNextLevel)
         
-    }, [ handleUpdateCharacter, handleUpdateUser ])
+    }, [ 
+        handleUpdateCharacter,
+        handleUpdateUser,
+        createdUser,
+        selectedCharacter,
+        stonesToNextLevel
+    ])
 
     const handleNavigateToFoundry = useCallback(() => {
         navigate(ERoute.FOUNDRY)

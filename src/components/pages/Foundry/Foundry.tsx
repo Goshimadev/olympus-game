@@ -15,7 +15,6 @@ import { stoneNumberOptions } from "../../../constants";
 import { FoundryPageContext } from "../../../context/FoundryPageContext/FoundryPageContext";
 import { createStoneObject } from "../../../utils";
 import { UserContext } from "../../../context/UserContext/UserContext";
-import { uniqueId } from "lodash";
 
 interface IFoundryProps {}
 
@@ -102,14 +101,14 @@ export const Foundry: React.FC<IFoundryProps> = () => {
             return [createStoneObject(parseInt(selectedValue?.value)), ...createdStones]
         })
 
-        setCreatedUser({...createdUser, "powder": (createdUser.powder - parseInt(selectedValue?.value) * 100)}) 
+        setCreatedUser(createdUser => ({...createdUser, "powder": (createdUser.powder - parseInt(selectedValue?.value) * 100)})) 
 
     }, [ setCreatedStones, selectedValue, setCreatedUser ])
 
     useEffect(() => {
         stoneNumberOptions.slice(Math.floor(createdUser.powder / 100), stoneNumberOptions.length)
                             .map(option => option.className = "disabled-option")
-    }, [ stoneNumberOptions, createdUser ])
+    }, [ createdUser ])
     
     return (
         <div className="foundry">
@@ -118,7 +117,7 @@ export const Foundry: React.FC<IFoundryProps> = () => {
                     <GradientContainer className="foundry__create-gradient" />
                     <h2 className="foundry__name">The foundry</h2>
                     <div className="foundry__create-powder">
-                        <img className="foundry__powder-image" src={foundryStoneImage} alt="foundry-stone-image" />
+                        <img className="foundry__powder-image" src={foundryStoneImage} alt="Foundry stone" />
                         <div className="foundry__powder-label">{`${createdUser.powder}/${createdUser.powderToCreateStone}`}</div>
                         <ProgressBar 
                             className="foundry__powder-bar"

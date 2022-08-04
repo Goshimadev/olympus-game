@@ -82,13 +82,13 @@ export const Summary: React.FC<ISummaryProps> = () => {
                             className="summary__save-input"
                             onClick={handleFocusOnEnter}
                         >
-                            <img src={checkIcon} alt="check-icon" />
+                            <img src={checkIcon} alt="Check icon" />
                         </button>
                         <button
                             className="summary__save-input"
                             onClick={() => setIsFocused(false)}
                         >
-                            <img src={xCircleIcon} alt="close-icon" />
+                            <img src={xCircleIcon} alt="Close icon" />
                         </button>
                     </>
                 ) : (

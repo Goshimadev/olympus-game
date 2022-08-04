@@ -12,7 +12,7 @@ interface IClaimProps {
 }
 
 export const Claim: React.FC<IClaimProps> = ({ stone }) => {
-    const { createdUser, setCreatedUser } = useContext(UserContext)
+    const { setCreatedUser } = useContext(UserContext)
     const { handleUpdateStone } = useContext(FoundryPageContext)
 
     const [ progress, setProgress ] = useState(0)
@@ -20,7 +20,7 @@ export const Claim: React.FC<IClaimProps> = ({ stone }) => {
     const handleClaimButton = useCallback(() => {
         handleUpdateStone(stone.id, "isClaimed", true)
 
-        setCreatedUser({...createdUser, "stones": (createdUser.stones + stone.numberOfStones)})
+        setCreatedUser(createdUser => ({...createdUser, "stones": (createdUser.stones + stone.numberOfStones)}))
 
     }, [ handleUpdateStone, stone, setCreatedUser ])
 

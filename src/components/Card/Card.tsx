@@ -1,5 +1,4 @@
-import React, { useCallback, useContext, useState } from "react";
-
+import React, { useCallback, useContext } from "react";
 import "./Card.scss";
 import { GradientContainer } from "../GradientContainer/GradientContainer";
 import { CharactersContext } from "src/context/CharactersContext/CharactersContext";
@@ -28,7 +27,7 @@ export const Card: React.FC<ICardProps> = ({ id, avatar, navigate, rarity }) => 
                 <div 
                     className={`card__background ${selectedCharacter?.id === id && `card__background_glow-${rarity.toLowerCase()}`}`}
                 ></div>
-                <img className="card__image" src={avatar} alt="avatar" />
+                <img className="card__image" src={avatar} alt="Avatar" />
             </div>
         </div>
     )

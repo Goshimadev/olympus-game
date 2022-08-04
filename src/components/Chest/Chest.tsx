@@ -1,4 +1,4 @@
-import React, { createElement, DetailedReactHTMLElement, useCallback } from "react";
+import React, { useCallback } from "react";
 import { SmallButton } from "../SmallButton/SmallButton";
 import { GradientContainer } from "../GradientContainer/GradientContainer";
 import "./Chest.scss";
@@ -74,14 +74,14 @@ export const Chest: React.FC<IChestsProps> = ({ name, image, className, icon, mo
         <div className={`chest chest-${mode} ${className}`}>
             <GradientContainer className={`chest__gradient-${mode}`} />
             <div className="chest__image">
-                <img className="chest__image-img" src={image} alt="chest-image" />
+                <img className="chest__image-img" src={image} alt="Chest" />
                 
                 <Tooltip 
                     overlayClassName={`chest__tooltip-${mode}`}
                     title={setTooltip}
                 >
                     <div className={`chest__tooltip-icon chest__icon-${mode}`}>
-                        <img className="chest__tooltip-i" src={icon} alt="tooltip-icon" />
+                        <img className="chest__tooltip-i" src={icon} alt="Tooltip" />
                     </div>
                 </Tooltip>
             </div>

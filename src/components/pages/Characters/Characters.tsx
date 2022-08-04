@@ -23,7 +23,7 @@ export const Characters: React.FC<ICharacterProps> = () => {
         if (!id) {
             navigate(ERoute.SUMMARY.replace(":id", createdCharacters[0].id))
         }
-    }, [ navigate ])
+    }, [ navigate, createdCharacters, id ])
 
     return (
         <div className="characters">
