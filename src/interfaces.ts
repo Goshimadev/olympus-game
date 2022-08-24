@@ -25,3 +25,26 @@ export interface IUser {
     powderToCreateStone: number
 }
 
+export interface IChest {
+    id: string
+    name: string,
+    image: string,
+    class: string,
+    icon: string,
+    openChestImage: string,
+    price: number,
+    quantity: number,
+    boxInfo: {
+        boxImage: string,
+        charactersImage: string,
+        characterChance: number,
+        olympChance: number,
+        olymp: string,
+        stoneChance: number,
+        powderChance: number,
+        powder: string,
+        goldCharacter: number,
+        diamondCharacter: number
+    }
+}
+

@@ -1,0 +1,133 @@
+.connect-wallet {
+    padding: 194px 132px 100px 132px;
+
+    @media screen and (max-width: 1200px) {
+        padding: 194px 80px 0 80px;
+    }
+
+    @media screen and (max-width: 664px) {
+        padding: 46px 50px 0 50px;
+    }
+
+    &__box {
+        background-color: #383950;
+        box-shadow: 0px 8px 12px 2px rgba(0, 0, 0, 0.15);
+        border-radius: 60px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        max-width: 1175px;
+        padding: 60px 390px 54px 107px;
+
+        @media screen and (max-width: 1200px) {
+            padding: 50px 344px 54px 64px;
+        }
+
+        @media screen and (max-width: 856px) {
+            padding: 50px 232px 50px 56px;  
+        }
+
+        @media screen and (max-width: 664px) {
+            padding: 50px 36px 82px 36px;
+            align-items: center;
+            border-radius: 16px;
+        }
+
+        @media screen and (max-width: 368px) {
+            padding: 50px 20px 82px 20px;
+        }
+    }
+
+    &__box-text {
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 37px;
+        color: #FFFFFF;
+        margin: 0;
+
+        @media screen and (max-width: 1040px) {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        @media screen and (max-width: 856px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        @media screen and (max-width: 664px) {
+            text-align: center;
+            padding: 0 18px;
+        }
+
+        @media screen and (max-width: 368px) {
+            padding: 0;
+        }
+    }
+
+    &__box-button {
+        cursor: pointer;
+        background: linear-gradient(93.33deg, #9683FF 10.12%, #879FFF 52.81%, #9683FF 94.38%);
+        border-radius: 30px;
+        text-transform: uppercase;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        font-size: 24px;
+        line-height: 30px;
+        color: #FFFFFF;
+        margin-top: 100px;
+        margin-left: auto;
+        border: 0;
+        min-width: 210px;
+        padding: 18px 40px;
+
+        @media screen and (max-width: 1040px) {
+            font-size: 18px;
+            line-height: 24px;
+            padding: 16px 24px;
+            margin-top: 72px;
+        }
+
+        @media screen and (max-width: 856px) {
+            font-size: 14px;
+            line-height: 18px;
+            margin-top: 64px;
+        }
+
+        @media screen and (max-width: 664px) {
+            margin-left: 0;
+            margin-top: 38px;
+        }
+
+        @media screen and (max-width: 368px) {
+            font-size: 12px;
+            line-height: 16px;
+            min-width: 50px;
+            padding: 12px 16px;
+        }
+    }
+
+    &__box-image {
+        position: absolute;
+        top: 0;
+        right: -12px;
+        height: 140%;
+        transform: translateY(-14%);
+
+        @media screen and (max-width: 1040px) {
+            height: 130%;
+            right: -8px;
+        }
+
+        @media screen and (max-width: 856px) {
+            height: 120%;  
+            transform: translateY(-8%);
+        }
+
+        @media screen and (max-width: 664px) {
+            transform: translateY(64%);
+            height: 110%;
+            right: -38px;
+        }
+    }
+}
