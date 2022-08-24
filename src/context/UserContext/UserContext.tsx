@@ -20,7 +20,6 @@ export const UserContextProvider: React.FC<{children: React.ReactNode}> = ({ chi
 
     const handleUpdateUser = useCallback((data: any, key: string, value: any) => {
         setCreatedUser({...data, [key]: value})
-
     }, [ setCreatedUser ])
 
     return (
