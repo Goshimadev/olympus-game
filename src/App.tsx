@@ -24,7 +24,7 @@ interface IAppProps {}
 
 export const App: React.FC<IAppProps> = () => {
   const location = useLocation()
-  // maxWidth: 'none', width: '100%'
+
   return (
     <div 
       className='app'
