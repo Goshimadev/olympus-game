@@ -1,5 +1,7 @@
 .connect-wallet {
     padding: 194px 132px 100px 132px;
+    display: flex;
+    justify-content: center;
 
     @media screen and (max-width: 1200px) {
         padding: 194px 80px 0 80px;

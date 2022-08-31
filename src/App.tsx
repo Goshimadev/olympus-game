@@ -26,7 +26,16 @@ export const App: React.FC<IAppProps> = () => {
   const location = useLocation()
 
   return (
-    <div className='app'>
+    <div 
+      className='app'
+      style={
+        location.pathname === '/connect-your-wallet' || 
+        location.pathname === '/sale' || 
+        location.pathname === '/presenting' 
+          ? {maxWidth: 'none', width: '100%'} 
+          : null
+      }
+    >
       <UserContextProvider>
         <CharactersContextProvider>
           <FoundryPageContextProvider>
@@ -41,7 +50,7 @@ export const App: React.FC<IAppProps> = () => {
                   location.pathname === '/connect-your-wallet' || 
                   location.pathname === '/sale' || 
                   location.pathname === '/presenting' 
-                    ? {padding: 0} 
+                    ? {padding: 0, margin: '0 auto', maxWidth: 'none'} 
                     : null
                 }
               >

@@ -57,12 +57,16 @@
     &__section-chests {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(292px, max-content));
+        grid-template-columns: repeat(auto-fill, minmax(260px, max-content));
         justify-content: space-between;
         grid-gap: 30px;
 
+        @media screen and (max-width: 1256px) {
+            grid-template-columns: repeat(auto-fill, minmax(240px, max-content));
+        }
+
         @media screen and (max-width: 736px) {
-            grid-template-columns: repeat(auto-fill, minmax(144px, max-content));
+            grid-template-columns: repeat(auto-fill, minmax(134px, max-content));
             grid-gap: 24px;
         }
 
