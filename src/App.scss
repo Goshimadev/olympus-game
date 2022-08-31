@@ -9,9 +9,6 @@
 
 body {
   padding: 0;
-  margin: 0 auto;
-  max-width: 1440px;
-  height: 1024px;
   background-color: #2D2E42; 
   overflow-y: scroll;
 
@@ -24,6 +21,10 @@ body {
 
 .app {
   height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  height: 1024px;
 
   &__main {
     position: relative;
