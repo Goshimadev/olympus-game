@@ -1,0 +1,264 @@
+.market-card {
+    cursor: pointer;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    position: relative;
+    background: #383950;
+
+    @media screen and (max-width: 750px) {
+        width: 144px;
+        border-radius: 12px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        top: -2px;
+        right: -2px;
+        border-radius: 23px;
+
+        @media screen and (max-width: 750px) {
+            border-radius: 14px;
+        }
+    }
+
+    &_common {
+
+        &::before {
+            background: linear-gradient(120deg, #9887CE, #76699D);
+        }
+    }
+
+    &_gold {
+        
+        &::before {
+            background: linear-gradient(120deg, #FAB639, #C27928);
+        }
+    }
+
+    &_diamond {
+        
+        &::before {
+            background: linear-gradient(120deg, #35CFC3, #6297E5, #9772F9);
+        }
+    }
+
+    &_uncommon {
+        
+        &::before {
+            background: linear-gradient(120deg, #3E8BA9, #2E6EB0);
+        }
+    }
+
+    &_rare {
+
+        &::before {
+            background: linear-gradient(120deg, #FAB639, #C27928);
+        }
+    }
+
+    &_legendary {
+        
+        &::before {
+            background: linear-gradient(120deg, #36CEBF, #5541B4);
+        }
+    }
+
+    &_stones {
+        
+        &::before {
+            background: linear-gradient(120deg, #35D4C0, #1C9F8F);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 218px;
+        border-radius: 20px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        @media screen and (max-width: 750px) {
+            height: 144px;
+            align-items: center;
+            border-radius: 12px;
+        }
+
+        &_common {
+            box-shadow: 0px 4px 10px rgba(152, 135, 206, 0.6);
+        }
+
+        &_gold {
+            box-shadow: 0px 4px 10px rgba(255, 214, 0, 0.6);
+        }
+
+        &_diamond {
+            box-shadow: 0px 4px 10px rgba(165, 104, 255, 0.6);
+        }
+
+        &_uncommon {
+            box-shadow: 0px 4px 10px rgba(66, 212, 232, 0.6);
+        }
+
+        &_rare {
+            box-shadow: 0px 4px 10px rgba(255, 214, 0, 0.6);
+        }
+
+        &_legendary {
+            box-shadow: 0px 4px 10px rgba(71, 128, 185, 0.6);
+        }
+
+        &_stones {
+            box-shadow: 0px 4px 10px rgba(53, 212, 192, 0.6);
+        }
+    }
+
+    &__img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 20px;
+
+        @media screen and (max-width: 750px) {
+            position: static;
+            height: 110%;
+            margin-top: -14px;
+        }
+
+        &_titan {
+
+            @media screen and (max-width: 750px) {
+                margin-left: 14px;
+            }
+        }
+
+        &_chimera {
+            left: -18px;
+        }
+
+        &_stones {
+            bottom: -8px;
+            left: -8px;
+        }
+        
+        &_rare, &_uncommon, &_legendary, &_common {
+            bottom: 30px;
+            left: auto;
+
+            @media screen and (max-width: 750px) {
+                width: 85%;
+                height: 70%;
+            }
+        }
+    }
+
+    &__description {
+        padding: 13px 14px 18px 19px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        @media screen and (max-width: 750px) {
+            padding: 6px 14px 10px 14px; 
+        }
+    }
+
+    &__description-header {
+        display: flex;
+    }
+
+    &__header {
+        &_top {
+            justify-content: space-between;
+        }
+
+        &_bottom {
+            justify-content: flex-start;
+
+        }
+    }
+
+    &__text {
+        font-family: 'Montserrat';
+        font-size: 12px;
+        line-height: 15px;
+        color: #FFFFFF;
+        width: 50%;
+        text-transform: capitalize;
+
+        @media screen and (max-width: 750px) {
+            font-size: 8px;
+            line-height: 12px;
+        }
+
+        &_common {
+            color: #9772F9;
+        }
+
+        &_gold {
+            color: #FFBD3D;
+        }
+
+        &_diamond {
+            background: linear-gradient(89.95deg, #64B5FF 11.63%, #A568FF 99.96%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        &_uncommon {
+            color: #42D4E8;
+        }
+
+        &_rare {
+            color: #FFBD3D;
+        }
+
+        &_legendary {
+            background: linear-gradient(90deg, #A568FF 0%, #35D4C0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        &_stones {
+            color: #35D4C0;
+        }
+    }
+
+    &__text-number {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__description-title {
+        font-size: 20px;
+        line-height: 25px;
+        text-transform: capitalize;
+
+        @media screen and (max-width: 750px) {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__description-line {
+        width: 100%;
+        border: 1px solid #9887CE;
+    }
+
+    &__description-price {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__price-text {
+        font-weight: 800;
+    }
+}

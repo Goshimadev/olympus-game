@@ -4,7 +4,7 @@ import { GradientContainer } from "../GradientContainer/GradientContainer";
 import "./Chest.scss";
 import { Tooltip } from "antd";
 import { CustomTooltip } from "../CustomTooltip/CustomTooltip";
-import { ERarity } from "../../constants";
+import { EChestType } from "../../constants";
  
 interface IChestsProps {
     name: string
@@ -18,7 +18,7 @@ export const Chest: React.FC<IChestsProps> = ({ name, image, className, icon, mo
 
     const setTooltip = useCallback(() => {
         switch(mode) {
-            case ERarity.COMMON:
+            case EChestType.COMMON:
                 return (
                     <CustomTooltip
                         mode={mode}
@@ -30,7 +30,7 @@ export const Chest: React.FC<IChestsProps> = ({ name, image, className, icon, mo
                         powderLevel="10-50"
                     />
                 )
-            case ERarity.UNCOMMON:
+            case EChestType.UNCOMMON:
                 return (
                     <CustomTooltip
                         mode={mode}
@@ -42,7 +42,7 @@ export const Chest: React.FC<IChestsProps> = ({ name, image, className, icon, mo
                         powderLevel="40-200"
                     />
                 )
-            case ERarity.RARE:
+            case EChestType.RARE:
                 return(
                     <CustomTooltip
                         mode={mode}
@@ -54,7 +54,7 @@ export const Chest: React.FC<IChestsProps> = ({ name, image, className, icon, mo
                         powderLevel="20-100"
                     />
                 )
-            case ERarity.LEGENDARY:
+            case EChestType.LEGENDARY:
                 return (
                     <CustomTooltip
                         mode={mode}

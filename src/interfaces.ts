@@ -48,3 +48,41 @@ export interface IChest {
     }
 }
 
+export interface IOption {
+    label: string,
+    value: string,
+    className?: string
+}
+
+export interface IFilter {
+    category: string[],
+    rarity: string[],
+    level: {
+        from: number,
+        to: number
+    },
+    priceRange: {
+        from: number,
+        to: number
+    }
+}
+
+export interface IMarketItem {
+    id: string,
+    collection: number,
+    name: string, 
+    price: number,
+    rarity: string,
+    category: string,
+    level: number,
+    image: string,
+    type?: string,
+    imageItem?: string,
+    pastAuction?: boolean
+}
+
+export interface INumberRange {
+    from: number,
+    to: number
+}
+

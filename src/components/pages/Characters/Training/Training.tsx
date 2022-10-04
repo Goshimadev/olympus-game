@@ -1,7 +1,6 @@
 import { Modal } from "antd";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { BigButton } from "../../../BigButton/BigButton";
-import { CustomDropdown } from "../../../CustomDropdown/CustomDropdown";
 import "./Training.scss";
 import { ERoute, trainingOptions } from "../../../../constants";
 import { CharactersContext } from "src/context/CharactersContext/CharactersContext";
@@ -9,6 +8,7 @@ import { ProgressBar } from "src/components/ProgressBar/ProgressBar";
 import { SmallButton } from "src/components/SmallButton/SmallButton";
 import { UserContext } from "src/context/UserContext/UserContext";
 import { useNavigate } from "react-router-dom";
+import { CustomDropdown } from "src/components/CustomDropdown/CustomDropdown";
 
 interface ITrainingProps {}
 
@@ -100,8 +100,10 @@ export const Training: React.FC<ITrainingProps> = () => {
                     <h3 className="training__send">Send to training for:</h3>
                     <CustomDropdown 
                         className="training__dropdown" 
-                        data={trainingOptions}
+                        options={trainingOptions}
                         onChange={setDaysToTrain}
+                        value={daysToTrain}
+                        mode='training'
                     />
                     <p className="training__text training__text-second">Training Achilles 1 for <span>{daysToTrain.label}</span> will give you between <span>60 and 240</span> evolving powder.</p>
                     <BigButton
