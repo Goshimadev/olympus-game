@@ -18,6 +18,14 @@ export const createStoneObject = (numberOfStones: number):IStoneObject => {
     }
 }
 
+export const countChildrenHeight = (children: HTMLCollection) => {
+    return Array.from(children || []).reduce((acc, child) => {
+        acc += child?.clientHeight
+        
+        return acc
+    }, 0)
+}
+
 export const createUserObject = ():IUser => {
     return {
         id: uniqueId(),

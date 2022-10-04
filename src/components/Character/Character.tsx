@@ -78,8 +78,15 @@ export const Character: React.FC<ICharacterProps> = () => {
                         <BiChevronRight />
                     </button>
                 </div>
-                <div className="character__main-info">
-                    <Info id={character?.id} />
+                <div className='character__main-info'>
+                    <Info 
+                        className="character__info" 
+                        links={[
+                            {name: 'summary', route: ERoute.SUMMARY.replace(":id", id)},
+                            {name: 'evolving', route: ERoute.EVOLVING.replace(":id", id)},
+                            {name: 'training', route: ERoute.TRAINING.replace(":id", id)}
+                        ]}
+                    />
                     {!smallScreen.matches && <Outlet />}
                 </div>
                 {smallScreen.matches && 

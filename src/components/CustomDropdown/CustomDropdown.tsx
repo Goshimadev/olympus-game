@@ -1,41 +1,82 @@
-import React, { useCallback, useState } from "react";
-import Dropdown, { Option } from 'react-dropdown';
-import "react-dropdown/style.css";
+import React, { useCallback, useRef, useState } from 'react';
+import './CustomDropdown.scss';
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
-import "./CustomDropdown.scss";
+import { IOption } from 'src/interfaces';
+import { countChildrenHeight } from 'src/utils';
 
-
-interface IDropdownProps {
-    data: Option[]
+interface ICustomDropdownProps {
+    value: IOption
+    options: IOption[]
+    onChange: (value: IOption) => void 
     className?: string
-    isDisabled?: false
-    setIsDisabled?: () => {}
-    onChange: (value: any) => void
+    mode?: string
 }
 
-export const CustomDropdown: React.FC<IDropdownProps> = ({ data, className, isDisabled, setIsDisabled, onChange }) => {
+export const CustomDropdown: React.FC<ICustomDropdownProps> = ({ value, options, onChange, className, mode }) => {
+    const [ isOpen, setIsOpen ] = useState(false)
+ 
+    const dropdownRef = useRef<HTMLDivElement>()
+    const optionsRef = useRef<HTMLDivElement>()
+    const smallScreen = matchMedia('(max-width: 690px)')
 
-    const [ currentValue, setCurrentValue ] = useState(data[0])
+    const handleToggleDropdown = useCallback(() => {
+        setIsOpen(isOpen => !isOpen)
+    }, [ setIsOpen ])
 
-    const dropdownValueOnChange = useCallback((option: Option) => {
-        onChange(option)
-        setCurrentValue(option)
-    }, [ onChange, setCurrentValue ])
-    
+    const handleChooseOption = useCallback((e: React.MouseEvent) => {
+        const target = e.target as HTMLDivElement
+
+        onChange(JSON.parse(target.dataset.value))
+        
+        setIsOpen(false)
+    }, [setIsOpen, onChange ])
+
+    const height = countChildrenHeight(optionsRef?.current?.children)
+
     return (
-        <div className="dropdown">
-            <Dropdown 
-                className={`dropdown ${className}`} 
-                options={data} 
-                value={currentValue || data[0]} 
-                onChange={dropdownValueOnChange} 
-                arrowOpen={<IoIosArrowUp className="dropdown__icon" />}
-                arrowClosed={<IoIosArrowDown className="dropdown__icon" />}
-                disabled={isDisabled}
-            />
+        <div 
+            className={`dropdown ${className}`}
+        >
+            <div 
+                className={`dropdown__wrapper dropdown__wrapper_${mode}`}
+            >
+                <div 
+                    ref={dropdownRef}
+                    className='dropdown__select dropdown__rectangle' 
+                    onClick={handleToggleDropdown}
+                    style={{
+                        borderRadius: isOpen && (smallScreen.matches ? '12px 12px 0 0' : '16px 16px 0 0'),
+                        borderBottom: isOpen && 0
+                    }}
+                >
+                    {value.label}
+                    {isOpen ? <IoIosArrowUp className="dropdown__icon"/> : <IoIosArrowDown className="dropdown__icon" />}
+                </div>
+                <div 
+                    ref={optionsRef}
+                    className='dropdown__options'
+                    style={{
+                        height: isOpen ? `${height}px` : '0px'
+                    }}
+                >
+                    {options.map((x) => {
+                        if (x.label === value.label) {
+                            return null
+                        }
+
+                        return (
+                            <div 
+                                key={x.value}
+                                className={`dropdown__option dropdown__rectangle ${x.className}`} 
+                                onClick={handleChooseOption}
+                                data-value={JSON.stringify(x)}
+                            >
+                                {x.label}
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
         </div>
     )
 }
-
-
-

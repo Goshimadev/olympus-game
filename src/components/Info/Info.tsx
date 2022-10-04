@@ -1,37 +1,33 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ERoute } from "../../constants";
 
 import "./Info.scss";
 
 interface IInfoProps {
-    id: string
+    links: {name: string, route: string}[]
+    className?: string
+    hasGradient?: boolean
 }
 
-export const Info: React.FC<IInfoProps> = ({ id }) => {
+export const Info: React.FC<IInfoProps> = ({ links, className, hasGradient }) => {
+
     return(
         <div className="info">
             <div className="info__menu">
-                <NavLink 
-                    className="info__menu-item info__summary" 
-                    to={ERoute.SUMMARY.replace(":id", id)} 
-                >
-                    Summary
-                </NavLink>
+                {links.map(link => {
+                    return (
+                        <NavLink 
+                            key={link.name}
+                            className={`info__menu-item ${className}`} 
+                            to={link.route}
 
-                <NavLink 
-                    className="info__menu-item info__evolving" 
-                    to={ERoute.EVOLVING.replace(":id", id)}
-                >
-                    Evolving
-                </NavLink>
-
-                <NavLink 
-                    className="info__menu-item info__training" 
-                    to={ERoute.TRAINING.replace(":id", id)}
-                >
-                    Training
-                </NavLink>
+                        >
+                            <div className={hasGradient && 'gradient'}>
+                                {link.name}
+                            </div>
+                        </NavLink>
+                    )
+                })}
             </div>
         </div>
     )

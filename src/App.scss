@@ -5,7 +5,9 @@
   src: local('PantonW01-Heavy'), url('./fonts/Panton\ W01\ Heavy.woff') format('truetype');
   src: local('PantonW01-Heavy'), url('./fonts/Panton\ W01\ Heavy.woff2') format('truetype');
 }
-@import 'antd/dist/antd.css';
+@import "antd/dist/antd.css";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 body {
   padding: 0;
@@ -32,6 +34,10 @@ body {
     min-width: 280px;
     height: 100%;
     padding: 121px 4.76% 0 29%;
+
+    @media screen and (max-width: 1300px) {
+      padding: 121px 4.76% 0 34%;
+    }
 
     @media screen and (max-width: 1200px) {
       padding: 121px 3% 0 34%;

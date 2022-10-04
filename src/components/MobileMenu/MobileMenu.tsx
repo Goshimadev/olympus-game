@@ -66,7 +66,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = () => {
                         <MenuItem label="my characters" route={ERoute.CHARACTERS} />
                         <MenuItem label="my chests" route={ERoute.CHESTS} />
                         <MenuItem label="the foundry" route={ERoute.FOUNDRY} />
-                        <MenuItem label="marketplace" route={ERoute.MARKETPLACE} />
+                        <MenuItem label="marketplace" route={ERoute.ALL_ITEMS} />
                     </div>
                     <div className="mobile-menu__line mobile-menu__line-bottom"></div>
                             <div className="mobile-menu__links">

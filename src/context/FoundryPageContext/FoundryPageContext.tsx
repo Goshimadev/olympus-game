@@ -1,12 +1,11 @@
 import React, { createContext, useCallback, useState } from "react";
 import { noop } from 'lodash';
-import { Option } from "react-dropdown";
 import { stoneNumberOptions } from "../../constants";
-import { IStoneObject } from "../../interfaces";
+import { IOption, IStoneObject } from "../../interfaces";
 
 interface IFoundryPageContextProps {
-    selectedValue: Option
-    setSelectedValue: React.Dispatch<React.SetStateAction<Option>>
+    selectedValue: IOption
+    setSelectedValue: React.Dispatch<React.SetStateAction<IOption>>
     hasProgressStarted: boolean
     setHasProgressStarted: React.Dispatch<React.SetStateAction<boolean>>
     createdStones: IStoneObject[]
@@ -26,7 +25,7 @@ export const FoundryPageContext = createContext<IFoundryPageContextProps>({
 })
 
 export const FoundryPageContextProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
-    const [ selectedValue, setSelectedValue ] = useState<Option>(stoneNumberOptions[0])
+    const [ selectedValue, setSelectedValue ] = useState<IOption>(stoneNumberOptions[0])
     const [ hasProgressStarted, setHasProgressStarted ] = useState(false)
     const [ createdStones, setCreatedStones ] = useState<IStoneObject[]>([])
 

@@ -1,4 +1,3 @@
-import { Option } from "react-dropdown";
 import commonChest from "./images/chest1.png";
 import uncommonChest from "./images/chest2.png";
 import rareChest from "./images/chest3.png";
@@ -19,7 +18,7 @@ import commonAvatars from './images/avatars-common.png';
 import uncommonAvatars from './images/avatars-uncommon.png';
 import rareAvatars from './images/avatars-rare.png';
 import legendaryAvatars from './images/avatars-legendary.png';
-import { IChest } from "./interfaces";
+import { IChest, IOption } from "./interfaces";
 
 export const BASE_URL = ''
 
@@ -29,15 +28,41 @@ export enum ERoute {
     CHESTS = '/my-chests',
     FOUNDRY = '/the-foundry',
     MARKETPLACE = '/marketplace',
-    SUMMARY =':id/summary',
-    EVOLVING = ':id/evolving',
-    TRAINING = ':id/training',
+    SUMMARY ='/my-characters/:id/summary',
+    EVOLVING = '/my-characters/:id/evolving',
+    TRAINING = '/my-characters/:id/training',
+    PRESENTING = '/presenting',
+    MARKET = '/marketplace/market',
+    COLLECTION = '/marketplace/my-collection',
+    ALL_ITEMS = '/marketplace/market/all-items',
+    MARKET_SALE = '/marketplace/market/market-sale',
+    AUCTION = '/marketplace/market/auction',
+    PAST_AUCTIONS = '/marketplace/market/past-auctions',
+    ITEM_INFO = '/item-info/:id',
     CONNECT_YOUR_WALLET = '/connect-your-wallet',
-    SALE = '/sale',
-    PRESENTING = '/presenting'
+    SALE = '/sale'
 }
 
+export enum ECategory {
+    CHARACTERS = 'characters',
+    CHESTS = 'chests',
+    EVOLVING_STONES = 'evolving_stones'
+}
+
+export enum ESortOption {
+    LOWEST_PRICE = 'lowest_price',
+    HIGHEST_PRICE = 'highest_price'
+}
+
+export const allCategories = [ECategory.CHARACTERS, ECategory.CHESTS, ECategory.EVOLVING_STONES]
+
 export enum ERarity {
+    COMMON = 'common',
+    GOLD = 'gold',
+    DIAMOND = 'diamond'
+}
+
+export enum EChestType {
     COMMON = "common",
     UNCOMMON = "uncommon",
     RARE = "rare",
@@ -150,73 +175,81 @@ export const notifications = [
     }
 ]
 
-export const  stoneNumberOptions: Option[] = [
+export const  stoneNumberOptions: IOption[] = [
     {
         label: "1 stone",
-        value: "1",
-        className: "",
+        value: "1"
     },
     {
         label: "2 stones",
-        value: "2",
-        className: "",
+        value: "2"
     },
     {
         label: "3 stones",
-        value: "3",
-        className: "",
+        value: "3"
     },
     {
         label: "4 stones",
-        value: "4",
-        className: "",
+        value: "4"
     },
     {
         label: "5 stones",
-        value: "5",
-        className: "",
+        value: "5"
     },
     {
         label: "6 stones",
-        value: "6",
-        className: "",
+        value: "6"
     },
     {
         label: "7 stones",
-        value: "7",
-        className: "",
+        value: "7"
     },
     {
         label: "8 stones",
-        value: "8",
-        className: "",
+        value: "8"
     },
     {
         label: "9 stones",
-        value: "9",
-        className: "",
+        value: "9"
     },
     {
         label: "10 stones",
-        value: "10",
-        className: "",
+        value: "10"
     }
 ]
 
-export const trainingOptions: Option[] = [
+export const trainingOptions: IOption[] = [
     {
         label: "1 day",
-        value: "1",
-        className: "",
+        value: "1"
     },
     {
         label: "2 days",
-        value: "2",
-        className: "",
+        value: "2"
     },
     {
         label: "3 days",
-        value: "3",
-        className: "",
+        value: "3"
     }
 ]
+
+export const priceOptions: IOption[] = [
+    {
+        label: 'Lowest price',
+        value: ESortOption.LOWEST_PRICE
+    },
+    {
+        label: 'Highest price',
+        value: ESortOption.HIGHEST_PRICE
+    }
+]
+
+export const levelScale = {
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four',
+    5: 'five',
+    6: 'six',
+    7: 'seven'
+}

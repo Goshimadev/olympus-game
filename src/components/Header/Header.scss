@@ -12,9 +12,13 @@
     gap: 10.6%;
     padding-right: 40px;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1441px) {
         max-width: 954px;
         margin: 0 auto;
+    }
+
+    @media screen and (max-width: 1300px) {
+        width: 61%;
     }
 
     @media screen and (max-width: 1200px) {
@@ -111,6 +115,14 @@
 
     &__logo { 
         display: none;
+        position: absolute;
+        left: -44px;
+        transform: translateX(-100%);
+        width: 193px;
+
+        @media screen and (max-width: 1084px) {
+            transform: translateX(-86%);
+        }
 
         @media screen and (max-width: 1008px) {
             display: block;

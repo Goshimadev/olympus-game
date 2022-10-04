@@ -5,16 +5,15 @@ import { BigButton } from "../../BigButton/BigButton";
 import { ProgressBar } from "../../ProgressBar/ProgressBar";
 import { Claim } from "../../Claim/Claim";
 import { Stone } from "../../Stone/Stone";
-import { CustomDropdown } from "../../CustomDropdown/CustomDropdown";
 import { GradientContainer } from "../../GradientContainer/GradientContainer";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { stoneNumberOptions } from "../../../constants";
 import { FoundryPageContext } from "../../../context/FoundryPageContext/FoundryPageContext";
 import { createStoneObject } from "../../../utils";
 import { UserContext } from "../../../context/UserContext/UserContext";
+import { CustomDropdown } from "src/components/CustomDropdown/CustomDropdown";
+import { uniqueId } from "lodash";
 
 interface IFoundryProps {}
 
@@ -98,10 +97,10 @@ export const Foundry: React.FC<IFoundryProps> = () => {
 
     const handleStartStoneProgress = useCallback(() => {
         setCreatedStones(createdStones => {
-            return [createStoneObject(parseInt(selectedValue?.value)), ...createdStones]
+            return [createStoneObject(parseInt(selectedValue.value)), ...createdStones]
         })
 
-        setCreatedUser(createdUser => ({...createdUser, "powder": (createdUser.powder - parseInt(selectedValue?.value) * 100)})) 
+        setCreatedUser(createdUser => ({...createdUser, "powder": (createdUser.powder - parseInt(selectedValue.value) * 100)})) 
 
     }, [ setCreatedStones, selectedValue, setCreatedUser ])
 
@@ -129,8 +128,11 @@ export const Foundry: React.FC<IFoundryProps> = () => {
                     <div className="foundry__create-options">
                         <div className="foundry__options-label">Create:</div>
                         <CustomDropdown 
-                            data={stoneNumberOptions}
+                            value={selectedValue}
+                            className="foundry__dropdown"
+                            options={stoneNumberOptions}
                             onChange={setSelectedValue}
+                            mode='foundry'
                         />
                         <BigButton 
                             className="foundry__options-button" 
@@ -143,7 +145,7 @@ export const Foundry: React.FC<IFoundryProps> = () => {
                 <div className="foundry__main-container foundry__progress">
                     <h2 className="foundry__name">Stone Progress</h2>
                     {createdStones.map(stone => 
-                        <Claim key={stone.id} stone={stone} />
+                        <Claim key={uniqueId(stone.id)} stone={stone} />
                     )}
                 </div>
             </div>
@@ -159,7 +161,7 @@ export const Foundry: React.FC<IFoundryProps> = () => {
                     nextArrow={<SampleNextArrow className="foundry__slider-arrow foundry__arrow-right" />}
                     responsive={[...responsiveSettings]}
                 >
-                    {Array(createdUser.stones).fill(0).map(stone => <Stone key={stone.id} label="sell" />)}
+                    {Array(createdUser.stones).fill(0).map(stone => <Stone key={uniqueId(stone.id)} label="sell" />)}
                 </Slider>
             </div>
         </div>

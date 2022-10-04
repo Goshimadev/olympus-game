@@ -1,0 +1,587 @@
+.item-info {
+    height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 152px 158px 80px 163px;
+
+    @media screen and (max-width: 1300px) {
+        padding: 152px 80px 80px 80px;
+    }
+
+    @media screen and (max-width: 1008px) {
+        padding: 85px 80px 20px 80px;
+    }
+
+    @media screen and (max-width: 832px) {
+        padding: 65px 46px 20px 46px;
+    }
+
+    @media screen and (max-width: 360px) {
+        padding: 65px 26px 20px 26px;
+    }
+
+    &__button-wrapper {
+        position: relative;
+        z-index: 111;
+    }
+
+    &__button {
+        border: 2px solid #9887CE;
+        background-color: #2D2E42;
+        text-transform: capitalize;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &__container {
+        width: 100%;
+        padding: 48px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            padding: 0;
+        }
+    }
+
+    &__container-image {
+        height: 450px;
+        width: 45%;
+        position: relative;
+        border-radius: 20px;
+        background: #2D2E42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+
+        @media screen and (max-width: 1112px) {
+            width: 47%;
+        }
+
+        @media screen and (max-width: 1024px) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 832px) {
+            width: 90%;
+        }
+
+        @media screen and (max-width: 700px) {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 500px) {
+            height: 284px;
+        }
+        
+        &::before {
+            content: '';
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            top: -2px;
+            right: -2px;
+            position: absolute;
+            z-index: -1;
+            border-radius: 22px;
+        }
+
+        &_common {
+
+            &::before {
+                background: linear-gradient(to right, #9887CE, #6652A7);
+            }
+        }
+
+        &_gold {
+
+            &::before {
+                background: linear-gradient(120deg, #FFBD3D, #FFEC3D, #FF8A00);
+            }
+        }
+
+        &_diamond {
+
+            &::before {
+                background: linear-gradient(to right, #A568FF, #35D4C0);
+            }
+        }
+
+        &_common-box {
+
+            &::before {
+                background: linear-gradient(120deg, #7D8EE8, #6297E5, #9772F9);
+            }
+        }
+
+        &_uncommon {
+
+            &::before {
+                background: linear-gradient(120deg, #64B5FF, #35D4C0, #42D4E8);
+            }
+        }
+
+        &_rare {
+
+            &::before {
+                background: linear-gradient(120deg, #FFA800, #FFA800, #FFBD3D);
+            }
+        }
+
+        &_legendary {
+
+            &::before {
+                background: linear-gradient(120deg, #7D8EE8, #6297E5, #9772F9);
+            }
+        }
+
+        &_stone {
+
+            &::before {
+                background: linear-gradient(120deg, #35D4C0, #25F1B461, #35D4C0);
+            }
+        }
+    }
+
+    &__img {
+        z-index: 1;
+        height: 120%;
+        width: auto;
+
+        &_chests {
+            height: auto;
+        }
+    }
+
+    &__container-content {
+        width: 48.5%;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: 1112px) {
+            width: 47%;
+        }
+
+        @media screen and (max-width: 1024px) {
+            width: 80%;
+            margin: 0 auto;
+            align-items: center;
+            gap: 36px;
+        }
+
+        @media screen and (max-width: 640px) {
+            width: 100%;
+        }
+    }
+
+    &__content-main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding-left: 14px;
+    }
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        font-family: 'Montserrat';
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+        width: auto;
+
+        @media screen and (max-width: 500px) {
+            font-size: 12px;
+            line-height: 15px;
+        }
+
+        &_bright {
+            color: #C8BFE5;
+        }
+    }
+
+    &__main-name {
+        font-size: 40px;
+        line-height: 51px;
+        text-transform: capitalize;
+
+        @media screen and (max-width: 1112px) {
+            font-size: 36px;
+            line-height: 48px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            font-size: 40px;
+            line-height: 51px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 30px;
+            line-height: 38px;
+        }
+    }
+
+    &__main-price {
+        font-size: 28px;
+        line-height: 35px;
+        text-transform: uppercase;
+        margin-bottom: -8px;
+
+        @media screen and (max-width: 1112px) {
+            font-size: 24px;
+            line-height: 48px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+
+    &__headline {
+
+        &_common {
+            background: linear-gradient(90deg, #9887CE 0%, #6652A7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        &_gold {
+            background: linear-gradient(90.34deg, #FFD600 0.32%, #FFBD3D 99.74%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+            &_reversed {
+                background: linear-gradient(90deg, #FFBD3D 0%, #FFD600 47.92%, #FFA800 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+
+        &_diamond {
+            background: linear-gradient(90.34deg, #46C3C9 0.32%, #7D8EE8 99.74%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+            &_reversed {
+                background: linear-gradient(90deg, #6297E5 0%, #35D4C0 47.92%, #A568FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+
+        &_uncommon {
+            color: #42D4E8;
+        }
+
+        &_rare {
+            color: #FFBD3D;
+        }
+
+        &_legendary {
+            background: linear-gradient(90deg, #A568FF 0%, #848FFF 51.44%, #35CAD4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+            &_reversed {
+                background: linear-gradient(90deg, #4ABCDF 0%, #6E6CF1 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+
+        &_common-box {
+            color: #7D8EE8;
+        }
+
+        &_stone {
+            color: #35D4C0;
+        }
+    }
+
+    &__main-data {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    &__main-button {
+        width: 151px;
+        background: #2D2E42;
+        text-transform: uppercase;
+        position: relative;
+
+        @media screen and (max-width: 400px) {
+            width: 120px;
+        }
+
+        &::before {
+            content: '';
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            top: -2px;
+            right: -2px;
+            position: absolute;
+            z-index: -1;
+            border-radius: 26px;
+        }
+
+        &_common {
+
+            &::before {
+                background: linear-gradient(to right, #9887CE, #A568FF);
+            }
+        }
+
+        &_gold {
+
+            &::before {
+                background: linear-gradient(to right, #FFD600, #FFA800);
+            }
+        }
+
+        &_diamond {
+
+            &::before {
+                background: linear-gradient(to right, #A568FF, #35D4C0);
+            }
+        }
+
+        &_common-box {
+
+            &::before {
+                background: linear-gradient(to right, #7D8EE8, #A568FF);
+            }
+        }
+
+        &_uncommon {
+
+            &::before {
+                background: linear-gradient(to right, #42D4E8, #2588A8);
+            }
+        }
+
+        &_rare {
+            &::before {
+                background: linear-gradient(to right, #FFD600, #FFA800);
+            }
+        }
+
+        &_legendary {
+
+            &::before {
+                background: linear-gradient(to right, #35D4C0, #A568FF);
+            }
+        }
+
+        &_stone {
+
+            &::before {
+                background: linear-gradient(to right, #42D4E8, #35D4C0);
+            }
+        }
+    }
+
+    &__content-description {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 0 0 0;
+        gap: 33px;
+
+        @media screen and (max-width: 1024px) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 832px) {
+            width: 90%;
+        }
+
+        @media screen and (max-width: 700px) {
+            width: 100%;
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    &__description-title {
+        font-size: 24px;
+        line-height: 30px;
+        color: #FFFFFF;
+        padding-left: 14px;
+
+        @media screen and (max-width: 500px) {
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+
+    &__description-about {
+        padding: 20px 78px 36px 27px;
+
+        @media screen and (max-width: 1112px) {
+            padding: 20px 37px 36px 27px;
+        }
+    }
+
+    &__description-info {
+        background-color: #383950;
+        box-shadow: 0px 8px 12px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        padding: 27px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 57px;
+        }
+
+        @media screen and (max-width: 400px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+    }
+
+    &__main-input {
+        width: 151px;
+        height: 38px;
+        border-radius: 4px;
+        background: #2D2E42;
+        position: relative;
+
+        @media screen and (max-width: 1112px) {
+            width: 120px;
+            height: 34px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            width: 129px;
+            height: 42px;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 120px;
+            height: 38px;
+        }
+
+        &::before {
+            content: '';
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            top: -1px;
+            right: -1px;
+            position: absolute;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        &_common {
+
+            &::before {
+                background: linear-gradient(to right, #9887CE, #A568FF);
+            }
+        }
+
+        &_gold {
+
+            &::before {
+                background: linear-gradient(to right, #FFD600, #FFA800);
+            }
+        }
+
+        &_diamond {
+
+            &::before {
+                background: linear-gradient(to right, #A568FF, #35D4C0);
+            }
+        }
+
+        &_common-box {
+
+            &::before {
+                background: linear-gradient(to right, #7D8EE8, #A568FF);
+            }
+        }
+
+        &_uncommon {
+
+            &::before {
+                background: linear-gradient(to right, #42D4E8, #2588A8);
+            }
+        }
+
+        &_rare {
+            &::before {
+                background: linear-gradient(to right, #FFD600, #FFA800);
+            }
+        }
+
+        &_legendary {
+
+            &::before {
+                background: linear-gradient(to right, #35D4C0, #A568FF);
+            }
+        }
+
+        &_stone {
+
+            &::before {
+                background: linear-gradient(to right, #42D4E8, #35D4C0);
+            }
+        }
+    }
+
+    &__input-label {
+        font-family: 'Montserrat';
+        font-size: 14px;
+        line-height: 16px;
+        color: #C8BFE5;
+        position: absolute;
+        top: -10px;
+        left: 9px;
+        z-index: 1111;
+        background-color: #2D2E42;
+        padding: 0 3px 0 5px;
+    }
+
+    &__input {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        border: none;
+        background-color: #2D2E42;
+        text-align: center;
+        font-family: 'Montserrat';
+        font-size: 17px;
+        line-height: 17px;
+        color: #FFFFFF;
+        padding-top: 6px;
+        
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 57px;
+        }
+
+        &:focus {
+            outline: 0;
+            border: 0;
+        }
+    }
+}
