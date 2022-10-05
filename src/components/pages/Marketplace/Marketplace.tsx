@@ -40,6 +40,7 @@ export const Marketplace: React.FC<IMarketplaceProps> = () => {
                         placeholder="Search" 
                         onChange={handleSetSearchTerm}
                         value={searchTerm || ''}
+                        maxLength={20}
                     />
                 </div>
             </div>

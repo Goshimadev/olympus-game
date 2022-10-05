@@ -66,11 +66,10 @@ export const Header: React.FC<IHeaderProps> = () => {
                 alt="Logo" 
                 style={{
                     display: 
-                        ((location.pathname.includes(ERoute.ITEM_INFO.replace('/:id', ''))  
-                        && mediumScreen.matches) 
-                        || location.pathname.includes(ERoute.MARKETPLACE))
-                        ? 'none' 
-                        : 'block'
+                        (!mediumScreen.matches && location.pathname.includes(ERoute.ITEM_INFO.replace('/:id', '')))
+                        || (mediumScreen.matches && !location.pathname.includes(ERoute.MARKETPLACE))
+                        ? mediumScreen.matches && location.pathname.includes(ERoute.ITEM_INFO.replace('/:id', '')) ? 'none' : 'block' 
+                        : 'none'
                 }}
             /> 
         </div>
