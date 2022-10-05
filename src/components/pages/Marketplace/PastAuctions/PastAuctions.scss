@@ -1,27 +1,3 @@
 .past-auctions {
-    padding-bottom: 212px; 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(226px, max-content));
-    justify-content: space-between;
-    grid-row-gap: 44px;
-    grid-column-gap: 20px;
-
-    @media screen and (max-width: 1096px) {
-        justify-content: space-evenly;
-    }
-
-    @media screen and (max-width: 750px) {
-        grid-template-columns: repeat(auto-fill, minmax(155px, max-content));
-    }
-
-    @media screen and (max-width: 640px) {
-        padding-bottom: 82px;
-    }
-
-    @media screen and (max-width: 504px) {
-        display: flex;
-        justify-content: center;
-        gap: 26px;
-        flex-wrap: wrap;
-    }
+    width: 100%;
 }
